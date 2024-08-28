@@ -1,5 +1,6 @@
 package it.davide.lascaux.challenge.cinemille.aspect;
 
+import lombok.extern.log4j.Log4j2;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
@@ -11,20 +12,19 @@ import java.util.logging.Logger;
 
 @Aspect
 @Component
+@Log4j2
 public class CineMilleLoggingAspect {
-
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
 
     @Before("it.davide.lascaux.challenge.cinemille.aspect.AopExpression.forAppFlow()")
     public void before(JoinPoint joinPoint) {
         String method = joinPoint.getSignature().toShortString();
-        logger.log(Level.INFO, "[START] -> {0}", method);
+        log.info("[START] -> {}", method);
     }
 
     @AfterReturning(pointcut = "it.davide.lascaux.challenge.cinemille.aspect.AopExpression.forAppFlow()")
     public void afterReturning(JoinPoint joinPoint) {
         String method = joinPoint.getSignature().toShortString();
-        logger.log(Level.INFO, "[END] -> {0}", method);
+        log.info("[END] -> {}", method);
     }
 
 }
