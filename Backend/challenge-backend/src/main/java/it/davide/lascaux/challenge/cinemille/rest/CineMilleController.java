@@ -6,6 +6,7 @@ import it.davide.lascaux.challenge.cinemille.model.GetFilmsByFilterRequest;
 import it.davide.lascaux.challenge.cinemille.model.common.Result;
 import it.davide.lascaux.challenge.cinemille.service.CineMilleService;
 import it.davide.lascaux.challenge.cinemille.util.ExcelUtility;
+import jakarta.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -86,8 +87,8 @@ public class CineMilleController {
             method = "GET",
             description = "This method makes it possible to retrieve the film history")
     public ResponseEntity<Result<Map<String, Object>>> getFilmsHistory(
-            @RequestParam(defaultValue = "0") final Integer pageNumber,
-            @RequestParam(defaultValue = "5") final Integer size
+            @RequestParam(defaultValue = "0") @Min(0) final Integer pageNumber,
+            @RequestParam(defaultValue = "5") @Min(0) final Integer size
     ){
         Result<Map<String, Object>> response = new Result<>();
 
