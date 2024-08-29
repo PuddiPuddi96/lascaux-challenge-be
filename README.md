@@ -63,4 +63,5 @@ Una volta effettuato il caricamento dei film sarà possibile visualizzare lo sto
 Per visualizzare il database bisogna andare a questo [link](http://localhost:19002) ed effettuare l'accesso con le seguenti credenziali:
 - **username**: cinemille@temp.it
 - **password**: cinemille
+
 Una volta effettuato l'accesso per visualizzare le tabelle dell'applicativo bisogna andare in servers -> CINE_MILLE -> Databases -> cinemille -> schemas -> public -> tables. Nel caso in cui viene richiesta una password inserire **cinemille**
