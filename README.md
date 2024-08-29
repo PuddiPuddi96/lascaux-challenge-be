@@ -31,3 +31,36 @@ I materiali che ci aspettiamo potrai creare:
 - Repository per il codice sorgente (puoi caricare il lavoro su GitHub o simili e inviarci il link; non sono accettati ZIP o TAR)
 - Una breve presentazione del lavoro svolto (PowerPoint, Keynote, PDF, Web)
 - Altri documenti a tua discrezione (diagrammi UML, documentazione, etc…)
+
+## Configurazione
+Clonare il progetto in una qualsiasi cartella con il comando
+
+```bash
+  git clone https://github.com/PuddiPuddi96/lascaux-challenge-be.git
+```
+
+### Docker
+1. Scaricare [docker desktop](https://www.docker.com/products/docker-desktop/)
+2. Avviare l'applicazione
+3. Aprire il prompt dei comandi e spostarsi nella cartella Docker del progetto
+4. Per effettuare la build del docker eseguire il comando
+```bash
+  docker-compose build
+```
+5. Succesivamente per avviare il docker eseguire il comando
+```bash
+  docker-compose up -d
+```
+
+### Swagger
+Al link di [swagger](http://localhost:19000/cine-mille/swagger-ui/index.html) sarà possibile visualizzare i servizi esposti dall'applicativo.
+Inizialmente non sono prenseti film, per poterli inserire bisogna invocare il servizio [upload-films](http://localhost:19000/cine-mille/swagger-ui/index.html#/cine-mille-controller/uploadFilmsFromExcel) dove sarà possibile caricare i film presenti in un file excel.
+All'interno del progetto è già presente un file excel da caricare e si trova nella cartella [Deliverables](https://github.com/PuddiPuddi96/lascaux-challenge-be/tree/main/Deliverables).
+
+Una volta effettuato il caricamento dei film sarà possibile visualizzare lo storico dei film ([storico](http://localhost:19000/cine-mille/swagger-ui/index.html#/cine-mille-controller/getFilmsHistory)) o effettuare una ricerca dei film in programmazione filtrando per data inizio e/o data fine programmazione ([ricerca](http://localhost:19000/cine-mille/swagger-ui/index.html#/cine-mille-controller/getFilmsByFilter)) 
+
+### Database
+Per visualizzare il database bisogna andare a questo [link](http://localhost:19002) ed effettuare l'accesso con le seguenti credenziali:
+- **username**: cinemille@temp.it
+- **password**: cinemille
+Una volta effettuato l'accesso per visualizzare le tabelle dell'applicativo bisogna andare in servers -> CINE_MILLE -> Databases -> cinemille -> schemas -> public -> tables. Nel caso in cui viene richiesta una password inserire **cinemille**
