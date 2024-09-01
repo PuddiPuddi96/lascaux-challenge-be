@@ -51,6 +51,10 @@ Clonare il progetto in una qualsiasi cartella con il comando
 ```bash
   docker-compose up -d
 ```
+6. Per terminare il tutto eseguire il comando
+```bash
+  docker-compose down
+```
 
 ### Swagger
 Al link di [swagger](http://localhost:19000/cine-mille/swagger-ui/index.html) sarà possibile visualizzare i servizi esposti dall'applicativo.
